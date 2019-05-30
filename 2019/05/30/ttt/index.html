@@ -96,19 +96,17 @@
 
 
 
-  <meta name="description" content="Faster-RCNN 中概念对比容易混淆的概念 bbox anchor RoI locBBox：全称是bounding box，边界框。  其中Ground Truth Bounding Box是每一张图中人工标注的框的位置。一张图中有几个目标，就有几个框(一般小于10个框)。 Faster  R-CNN的预测结果也可以叫bounding box，不过一般叫 Predict Bounding B">
+  <meta name="description" content="yesy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Faster-RCNN 中概念对比">
-<meta property="og:url" content="http://yoursite.com/2019/05/29/Faster-RCNN 中概念对比/index.html">
+<meta property="og:title" content="ttt">
+<meta property="og:url" content="http://yoursite.com/2019/05/30/ttt/index.html">
 <meta property="og:site_name" content="Siomon的小站">
-<meta property="og:description" content="Faster-RCNN 中概念对比容易混淆的概念 bbox anchor RoI locBBox：全称是bounding box，边界框。  其中Ground Truth Bounding Box是每一张图中人工标注的框的位置。一张图中有几个目标，就有几个框(一般小于10个框)。 Faster  R-CNN的预测结果也可以叫bounding box，不过一般叫 Predict Bounding B">
+<meta property="og:description" content="yesy">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/1559098234291.png">
-<meta property="og:updated_time" content="2019-05-29T13:24:40.775Z">
+<meta property="og:updated_time" content="2019-05-30T02:27:19.357Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Faster-RCNN 中概念对比">
-<meta name="twitter:description" content="Faster-RCNN 中概念对比容易混淆的概念 bbox anchor RoI locBBox：全称是bounding box，边界框。  其中Ground Truth Bounding Box是每一张图中人工标注的框的位置。一张图中有几个目标，就有几个框(一般小于10个框)。 Faster  R-CNN的预测结果也可以叫bounding box，不过一般叫 Predict Bounding B">
-<meta name="twitter:image" content="http://yoursite.com/images/1559098234291.png">
+<meta name="twitter:title" content="ttt">
+<meta name="twitter:description" content="yesy">
 
 
 
@@ -116,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/29/Faster-RCNN 中概念对比/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/30/ttt/">
 
 
 
@@ -126,7 +124,7 @@
   };
 </script>
 
-  <title>Faster-RCNN 中概念对比 | Siomon的小站</title>
+  <title>ttt | Siomon的小站</title>
   
 
 
@@ -291,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/29/Faster-RCNN 中概念对比/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/30/ttt/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Simon">
@@ -308,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Faster-RCNN 中概念对比
+          <h1 class="post-title" itemprop="name headline">ttt
 
               
             
@@ -334,9 +332,13 @@
                 
               
 
-              <time title="创建时间：2019-05-29 21:24:40" itemprop="dateCreated datePublished" datetime="2019-05-29T21:24:40+08:00">2019-05-29</time>
+              <time title="创建时间：2019-05-30 10:27:07 / 修改时间：10:27:19" itemprop="dateCreated datePublished" datetime="2019-05-30T10:27:07+08:00">2019-05-30</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -369,39 +371,7 @@
       
 
       
-        <h2 id="Faster-RCNN-中概念对比"><a href="#Faster-RCNN-中概念对比" class="headerlink" title="Faster-RCNN 中概念对比"></a>Faster-RCNN 中概念对比</h2><h3 id="容易混淆的概念-bbox-anchor-RoI-loc"><a href="#容易混淆的概念-bbox-anchor-RoI-loc" class="headerlink" title="容易混淆的概念 bbox anchor RoI loc"></a><strong>容易混淆的概念 bbox anchor RoI loc</strong></h3><p><strong>BBox</strong>：全称是bounding box，边界框。</p>
-<ul>
-<li>其中<strong>Ground Truth Bounding Box</strong>是每一张图中人工标注的框的位置。一张图中有几个目标，就有几个框(一般小于10个框)。</li>
-<li>Faster  R-CNN的预测结果也可以叫bounding box，不过一般叫 <strong>Predict Bounding Box</strong>.</li>
-</ul>
-<p><strong>Anchor</strong>：锚框 </p>
-<ul>
-<li>是人为选定的具有一定尺度、比例的框。一个feature  map的锚的数目有上万个（比如 20000）。</li>
-</ul>
-<p><strong>RoI</strong>：region of interest，候选框，候选区域。</p>
-<ul>
-<li>Anchor经过了筛选之后就变成了ROI   Anchor相当于瞎猜   ROI是选择了其中一些靠谱的框出来 不过ROI相比于anchor是加上了位置偏移量（RPN的回归结果）的</li>
-<li>Faster R-CNN之前传统的做法是利用selective  search从一张图上大概2000个候选框框。现在利用RPN可以从上万的anchor中找出一定数目更有可能的候选框。在训练RCNN的时候，这个数目是2000，在测试推理阶段，这个数目是300（为了速度）我个人实验发现RPN生成更多的RoI能得到更高的mAP。</li>
-</ul>
-<p><strong>Loc</strong> 位置参数</p>
-<ul>
-<li><p>Ground Truth Bounding      Box 包含两个部分</p>
-</li>
-<li><ul>
-<li>位置 gt_loc</li>
-<li>类别 gt_label</li>
-</ul>
-</li>
-<li><p>ROInet 的输出</p>
-</li>
-<li><ul>
-<li>Loc</li>
-<li>label</li>
-</ul>
-</li>
-</ul>
-<p>在RPN阶段，先<strong>穷举生成千上万个anchor</strong>，然后利用<strong>Ground Truth Bounding Boxes</strong>，训练RPN，而后从anchor中找出一定数目的<strong>候选区域（RoIs</strong>）。RoIs在下一阶段用来训练RoIHead，最后生成<strong>Predict Bounding Boxes</strong>。</p>
-<p><img src="/images/1559098234291.png" alt="1559098234291"></p>
+        <p>yesy</p>
 
       
     </div>
@@ -432,8 +402,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/29/hexo-typora-完美插入图片/" rel="next" title="hexo + typora 完美插入图片">
-                <i class="fa fa-chevron-left"></i> hexo + typora 完美插入图片
+              <a href="/2019/05/30/测试/" rel="next" title="测试">
+                <i class="fa fa-chevron-left"></i> 测试
               </a>
             
           </div>
@@ -442,8 +412,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/29/test/" rel="prev" title="test">
-                test <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/30/Faster-RCNN 中概念对比/" rel="prev" title="Faster-RCNN 中概念对比">
+                Faster-RCNN 中概念对比 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -488,17 +458,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -513,7 +474,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -544,23 +505,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Faster-RCNN-中概念对比"><span class="nav-number">1.</span> <span class="nav-text">Faster-RCNN 中概念对比</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#容易混淆的概念-bbox-anchor-RoI-loc"><span class="nav-number">1.1.</span> <span class="nav-text">容易混淆的概念 bbox anchor RoI loc</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
